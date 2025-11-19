@@ -13,6 +13,8 @@ use tokio::fs;
 use tokio::sync::Mutex;
 use tokio::time::sleep;
 
+
+
 const DEFAULT_FEED: &str = "https://feeds.bbci.co.uk/news/technology/rss.xml";
 const DEFAULT_MAX_POSTS: usize = 3;
 const DEFAULT_CHECK_INTERVAL_SECS: u64 = 300;
@@ -81,10 +83,15 @@ impl Config {
     }
 }
 
+
+
 struct Bot {
     ctx: Arc<BotContext>,
     offset: i64,
 }
+
+
+
 
 impl Bot {
     fn new(
@@ -125,6 +132,8 @@ impl Bot {
             }
         }
     }
+
+    
 
     fn spawn_auto_updates(ctx: Arc<BotContext>) {
         tokio::spawn(async move {
