@@ -1,0 +1,13 @@
+[package]
+name = "project"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+anyhow = "1.0"
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"] }
+rss = "2.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.37", features = ["macros", "rt-multi-thread", "time", "fs", "sync"] }
+dotenvy = "0.15"
